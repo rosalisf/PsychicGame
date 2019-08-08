@@ -1,0 +1,25 @@
+h1 {
+  text-align: center;
+}
+
+.ml12 {
+  font-weight: 200;
+  font-size: 1.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+}
+
+.ml12 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+p {
+  text-align: center;
+  font-family: "Grenze", serif;
+}
+
+.title {
+  font-size: 16pt;
+  font-weight: bold;
+}
