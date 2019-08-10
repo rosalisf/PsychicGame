@@ -74,10 +74,14 @@ document.addEventListener("keyup", function(event) {
     console.log("win: ", win);
     // console.log(document.getElementById("win"));
     document.getElementById("win").innerHTML = win;
+    guessList = "";
+    document.getElementById("guessList").innerHTML = guessList;
   } else if (wrongGuesses === 0) {
     lose++;
     wrongGuesses = 8;
     computerGuess = getLetter();
+    guessList = "";
+    document.getElementById("guessList").innerHTML = guessList;
     // console.log(document.getElementById("lose"));
     document.getElementById("lose").innerHTML = lose;
   } else {
