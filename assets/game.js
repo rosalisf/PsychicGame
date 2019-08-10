@@ -56,23 +56,36 @@ const letter = [
 let win = 0;
 let lose = 0;
 let wrongGuesses = 8;
-
 let computerGuess = getLetter();
+let guessList = "";
 
 document.addEventListener("keyup", function(event) {
   const playerGuess = event.key;
+
   // console.log(playerGuess);
   // console.log(computerGuess());
+  console.log(playerGuess);
   if (playerGuess === computerGuess) {
     win++;
     wrongGuesses = 8;
+    computerGuess = getLetter();
+    document.getElementById("guessLeft").innerHTML = wrongGuesses;
+
     console.log("win: ", win);
+    // console.log(document.getElementById("win"));
+    document.getElementById("win").innerHTML = win;
   } else if (wrongGuesses === 0) {
     lose++;
     wrongGuesses = 8;
+    computerGuess = getLetter();
+    // console.log(document.getElementById("lose"));
+    document.getElementById("lose").innerHTML = lose;
   } else {
     wrongGuesses--;
-    console.log("lose: ", lose);
+    document.getElementById("guessLeft").innerHTML = wrongGuesses;
+    console.log("lose: ", wrongGuesses);
+    guessList += playerGuess + ", ";
+    document.getElementById("guessList").innerHTML = guessList;
   }
 });
 // computer will guess a letter immediately after player guesses.
@@ -81,8 +94,6 @@ function getLetter() {
 }
 
 // update dom for user
-// console.log(document.getElementById("wins"));
-// document.getElementById("wins").innerHTML = wins;
 
 // update dom for user
 
